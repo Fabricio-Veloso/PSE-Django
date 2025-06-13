@@ -18,7 +18,7 @@ def get_data():
             dbname="teste_db",
             user="teste_user",
             password="senha123",
-            host="host.docker.internal",  # ou IP da máquina
+            host="172.16.1.2",  # ou IP da máquina
             port="5432"
         )
         cur = conn.cursor()
@@ -48,4 +48,3 @@ if __name__ == "__main__":
     logging.info("Servidor iniciado na porta 8000.")
     server = HTTPServer(('', 8000), SimpleHandler)
     server.serve_forever()
-
