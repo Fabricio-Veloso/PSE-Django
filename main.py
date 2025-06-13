@@ -7,10 +7,11 @@ import logging
 
 # Configuração de log persistente
 logging.basicConfig(
-    filename='/app/logs/app.log',
+    filename='logs/app.log',  # caminho relativo
     level=logging.INFO,
     format='%(asctime)s %(levelname)s %(message)s'
 )
+
 
 def get_data():
     try:
@@ -48,3 +49,4 @@ if __name__ == "__main__":
     logging.info("Servidor iniciado na porta 8000.")
     server = HTTPServer(('', 8000), SimpleHandler)
     server.serve_forever()
+
